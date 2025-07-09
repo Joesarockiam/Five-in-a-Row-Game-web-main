@@ -2,16 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'Joesarockiam/five-in-a-row:latest'
+        DOCKER_IMAGE = 'yourdockerhubusername/five-in-a-row:latest'
     }
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Joesarockiam/Five-in-a-Row-Game.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $DOCKER_IMAGE .'
