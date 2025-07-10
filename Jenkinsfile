@@ -6,6 +6,13 @@ pipeline {
     }
 
     stages {
+        stage('Validate Checkout') {
+            steps {
+                echo "Code has been checked out by Jenkins SCM. Current dir:"
+                sh 'pwd && ls -la'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $DOCKER_IMAGE .'
