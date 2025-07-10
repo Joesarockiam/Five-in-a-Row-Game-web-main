@@ -6,12 +6,23 @@ pipeline {
     }
 
     stages {
-        stage('Validate Checkout') {
+
+         stage('Confirm Jenkinsfile works') {
+             steps {
+                     echo '✅ Jenkinsfile is being executed'
+                sh 'ls -la'
+      }
+    }
+
+
+
+        
+        stage('Print current dir') {
             steps {
-                echo "Code has been checked out by Jenkins SCM. Current dir:"
                 sh 'pwd && ls -la'
             }
         }
+
 
         stage('Build Docker Image') {
             steps {
