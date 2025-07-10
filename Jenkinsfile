@@ -7,22 +7,12 @@ pipeline {
 
     stages {
 
-         stage('Confirm Jenkinsfile works') {
-             steps {
-                     echo '✅ Jenkinsfile is being executed'
-                sh 'ls -la'
-      }
-    }
-
-
-
-        
-        stage('Print current dir') {
+        stage('Confirm Jenkinsfile works') {
             steps {
-                sh 'pwd && ls -la'
+                echo '✅ Jenkinsfile is being executed'
+                sh 'ls -la'
             }
         }
-
 
         stage('Build Docker Image') {
             steps {
